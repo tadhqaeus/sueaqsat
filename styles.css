@@ -66,9 +66,10 @@ span { font-size: var(--subtext); }
 	border-radius: var(--mini);
 	height: 500px;
 	width: 500px;
+	box-shadow: 0 0 var(--mini) var(--yellow-green);
 }
 
-.content h1 { text-align: center; margin: var(--small) 0; }
+.content h1 { margin: var(--small); }
 
 .task-form {
 	display: flex;
@@ -78,22 +79,28 @@ span { font-size: var(--subtext); }
 
 .task-form > * { margin: 0 var(--small); }
 
-.task-form input {
+.task-form .input-task {
 	background: none;
 	border: none;
 	color: var(--nyanza);
 	font-family: inherit;
-	font-size: var(--sub-title);
+	font-size: var(--paragraph);
 	border-bottom: 1px solid var(--yellow-green);
 	flex: 1;
 	padding: var(--mini) var(--tiny);
+}
+
+.task-form .input-task:focus { outline: none; }
+
+.task-form .input-task.empty {
+	animation: input-empty 300ms;
 }
 
 .task-form .add-task {
 	cursor: pointer;
 	border: 2px solid var(--yellow-green);
 	border-radius: var(--mini);
-	font-size: var(--title);
+	font-size: var(--sub-title);
 	user-select: none;
 }
 
@@ -102,7 +109,16 @@ span { font-size: var(--subtext); }
 	color: var(--smoky-black);
 }
 
-.todo-list { margin: var(--small); }
+.task-form .add-task:active { transform: scale(0.9); }
+
+.todo-list {
+	margin: var(--small);
+	max-height: 360px;
+	overflow-y: scroll;
+}
+
+.todo-list::-webkit-scrollbar { display: none; }
+.todo-list { scrollbar-width: none; }
 
 .todo-list li {
 	display: flex;
@@ -126,7 +142,35 @@ span { font-size: var(--subtext); }
 	font-size: var(--paragraph);
 	color: rgba(133, 203, 51, 0.3);
 	user-select: none;
+	margin-left: auto;
 }
 
-.todo-list .remove-task:hover { color: var(--yellow-green); }
+.todo-list .remove-task:hover {
+	color: var(--yellow-green);
+	animation: remove-task 200ms infinite;
+}
+
+.todo-list .remove-task:active {
+	animation: none;
+	transform: scale(0.9);
+}
+/* STYLING */
+
+/* ANIMATIONS */
+@keyframes remove-task {
+	0% { transform: rotateZ(0deg); }
+	25% { transform: rotateZ(5deg); }
+	50% { transform: rotateZ(0deg); }
+	75% { transform: rotateZ(-5deg); }
+	100% { transform: rotateZ(0deg); }
+}
+
+@keyframes input-empty {
+	0% { transform: translateX(0); }
+	25% { transform: translateX(-4px); }
+	50% { transform: translateX(16px); border-bottom-color: red; }
+	75% { transform: translateX(-4px); }
+	100% { transform: translateX(0); }
+}
+/* ANIMATIONS */
 

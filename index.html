@@ -14,39 +14,39 @@
 		<div class="content">
 			<h1>to do list</h1>
 			<form action="" class="task-form">
-				<input type="text" name="task" autocomplete="off" placeholder="add new task" required>
-				<i class="material-icons add-task">add</i>
+				<input id="input-task" class="input-task" type="text" name="task" autocomplete="off" placeholder="add new task">
+				<i class="material-icons add-task" onclick="addTask()">add</i>
 			</form>
-			<ul class="todo-list">
+			<ul id="todo-list" class="todo-list">
 				<li>
 					<i class="material-icons cb checked">check_box</i>
 					<p>start designing the ui</p>
 					<i class="material-icons remove-task">close</i>
 				</li>
 				<li>
-					<i class="material-icons cb">check_box_outline_blank</i>
+					<i class="material-icons cb checked">check_box</i>
 					<p>move close button to right</p>
 					<i class="material-icons remove-task">close</i>
 				</li>
 				<li>
-					<i class="material-icons cb">check_box_outline_blank</i>
+					<i class="material-icons cb checked">check_box</i>
 					<p>function for adding new task</p>
 					<i class="material-icons remove-task">close</i>
 				</li>
 				<li>
-					<i class="material-icons cb">check_box_outline_blank</i>
+					<i class="material-icons cb checked">check_box</i>
 					<p>function for deleting a task</p
 					><i class="material-icons remove-task">close</i>
 				</li>
 				<li>
-					<i class="material-icons cb">check_box_outline_blank</i>
+					<i class="material-icons cb checked">check_box</i>
 					<p>function for completing a task</p
 					><i class="material-icons remove-task">close</i>
 				</li>
 			</ul>
 		</div>
 	</div>
-	<script type="script" src="index.js"></script>
+	<script src="index.js"></script>
 </body>
 </html>
 
