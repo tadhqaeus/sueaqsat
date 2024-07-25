@@ -11,6 +11,10 @@
 </head>
 <body>
 	<div class="container">
+		<div class="menu">
+			<i class="material-icons help">help</i>
+			<i id="mode-toggle" class="material-icons">light_mode</i>
+		</div>
 		<div class="content">
 			<h1>to do list</h1>
 			<form action="" class="task-form">
@@ -18,33 +22,14 @@
 				<i class="material-icons add-task" onclick="addTask()">add</i>
 			</form>
 			<ul id="todo-list" class="todo-list">
-				<li>
-					<i class="material-icons cb checked">check_box</i>
-					<p>start designing the ui</p>
-					<i class="material-icons remove-task">close</i>
-				</li>
-				<li>
-					<i class="material-icons cb checked">check_box</i>
-					<p>move close button to right</p>
-					<i class="material-icons remove-task">close</i>
-				</li>
-				<li>
-					<i class="material-icons cb checked">check_box</i>
-					<p>function for adding new task</p>
-					<i class="material-icons remove-task">close</i>
-				</li>
-				<li>
-					<i class="material-icons cb checked">check_box</i>
-					<p>function for deleting a task</p
-					><i class="material-icons remove-task">close</i>
-				</li>
-				<li>
-					<i class="material-icons cb checked">check_box</i>
-					<p>function for completing a task</p
-					><i class="material-icons remove-task">close</i>
-				</li>
 			</ul>
 		</div>
+		<ul class="tutorial hidden">
+			<li><p>add a task</p><i class="material-icons">add</i></li>
+			<li><p>check a task</p><i class="material-icons">check_box_outline_blank</i></li>
+			<li><p>edit a task</p><i class="material-icons">edit</i></li>
+			<li><p>delete a task</p><i class="material-icons">close</i></li>
+		</ul>
 	</div>
 	<script src="index.js"></script>
 </body>
